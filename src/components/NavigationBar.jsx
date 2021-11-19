@@ -1,37 +1,48 @@
 import "./NavigationBar.css";
 import logo from "../img/logo.png";
+import { NavLink } from "react-router-dom";
 const NavigationBar = () => {
   return (
     <div className="container-fluid p-0">
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a className="navbar-brand" href="#home">
-          <img className="logo-img" src={logo} alt="logo" />
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse " id="navbarNav">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
-              <a className="nav-link">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link">Features</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link">Pricing</a>
-            </li>
-          </ul>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-2">
+            <a className="navbar-brand" href="#home">
+              <img className="logo-img" src={logo} alt="logo" />
+            </a>
+          </div>
+          <div className="col-md-4">
+            <form className="form-inline my-lg-0">
+              <input
+                className="form-control mr-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                className="btn btn-outline-dark my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+          <div className="col-md-6">
+            <NavLink to="/" className="">
+              Home
+            </NavLink>
+            <NavLink to="/" className="">
+              Shop
+            </NavLink>
+            <NavLink to="/" className="">
+              Contact Us
+            </NavLink>
+            <NavLink to="/" className="">
+              About
+            </NavLink>
+          </div>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };
